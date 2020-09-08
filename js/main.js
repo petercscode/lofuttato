@@ -13,7 +13,7 @@ function csinaljlovat(event) {
 hivatkozást átadja a lo változónak*/
 let lo = document.createElement("img");
 /* Változtatja az <img> tag egyik attribútumár: src-nek beállítja a lo.gif-et:*/
-lo.src = "/img/lo.gif";
+lo.src = "img/ujlo.gif";
 /* gyerekként hozzáadja a <body>-hoz a lo.gif-et */
 document.body.appendChild(lo);
 /* Cél, hogy oda tegye le a lovat ahova kattintunk, vagyis a ló pozíciója
@@ -24,9 +24,9 @@ lo.style.position = "absolute";
 lo.style.top = event.clientY-100 + "px";
 lo.style.left = event.clientX-100 + "px";
 
-/* lo.style.filter = "contrast("+Math.random()+")";
+lo.style.filter = "contrast("+Math.random()+")";
 lo.style.filter += "brightness("+Math.random()+")";
-lo.style.filter += "invert("+Math.random()+")"; */
+/* lo.style.filter += "invert("+Math.random()+")"; */
 
 
 lovak.push(lo);
@@ -48,6 +48,18 @@ parseInt*/
 function mindentmozgat(){
 for (let i=0; i<lovak.length; i++){
     lovak[i].style.left = parseInt(lovak[i].style.left) + 1 + "px";
+
+    /* Ír egy if-et arra, hogy ha kiment az ló
+      jobbra a képernyőről, akkor törölje, hogy ne
+      foglalja a memóriát: ha a ló style.left-je
+      nagyobb, mint az ablak szélessége (vagyis a
+        document.body.clientWidth), akkor a body-ból
+        remove-olja az adott elemet */
+
+        if (parseInt(lovak[i].style.left + "px") > document.body.clientWidth) {
+            document.body.removeChild(lovak[i]);
+            lovak.splice(i, 1);
+        }
 }
 }
 

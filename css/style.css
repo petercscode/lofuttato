@@ -2,7 +2,17 @@
 az egér kattintással*/
 
 img {
-    user-drag: none;
-    -webkit-user-drag: none;
-    width:20%;
-  }
+  user-drag: none;
+  -webkit-user-drag: none;
+  width: 20%;
+}
+
+body {
+  background-image: url("/img/hatter.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+
+  /* Ez arra jó, hogy ne ugráljon alul a görgetősáv: eltünteti a görgetősávot: */
+  overflow: hidden;
+}
