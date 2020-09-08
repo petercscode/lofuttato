@@ -1,0 +1,8 @@
+/*Ezzel gátolja meg, hogy a lovatakat véletlenül "felemeljük"
+az egér kattintással*/
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    width:20%;
+  }
