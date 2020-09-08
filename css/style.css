@@ -8,7 +8,7 @@ img {
 }
 
 body {
-  background-image: url("/img/hatter.jpg");
+  background-image: url("img/hatter.jpg");
   background-repeat: no-repeat;
   background-position: center;
   height: 400px;
